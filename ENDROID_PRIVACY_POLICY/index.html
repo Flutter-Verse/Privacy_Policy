@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Endroid Cam & Bharat Cam</title>
+  <meta name="description"
+    content="Privacy Policy for the Endroid Cam & Bharat Cam smart camera management application by DBS Security Systems Pvt. Ltd." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─── */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      background: #0b0f19;
+      color: #d1d5db;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ─── Noise Texture Overlay ─── */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── Gradient Accent Glow ─── */
+    .glow-top {
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(ellipse at center,
+          rgba(99, 102, 241, 0.15) 0%,
+          transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── Container ─── */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ─── Header ─── */
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .header .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #818cf8;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #f9fafb;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #f9fafb 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .subtitle {
+      font-size: 1.05rem;
+      color: #9ca3af;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .header .last-updated {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* ─── Intro Paragraph ─── */
+    .intro {
+      font-size: 1rem;
+      color: #9ca3af;
+      margin-bottom: 40px;
+      line-height: 1.8;
+      padding: 20px 24px;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid #6366f1;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .intro strong {
+      color: #c7d2fe;
+    }
+
+    /* ─── Section Cards ─── */
+    .section {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+      margin-bottom: 20px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      border-color: rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.06);
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f3f4f6;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #c7d2fe;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    .section p {
+      color: #9ca3af;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 12px;
+    }
+
+    .section ul li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 6px;
+      color: #9ca3af;
+      font-size: 0.95rem;
+    }
+
+    .section ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #6366f1;
+    }
+
+    /* ─── Permissions Table ─── */
+    .permissions-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    .permissions-table th,
+    .permissions-table td {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .permissions-table th {
+      color: #c7d2fe;
+      font-weight: 600;
+      background: rgba(99, 102, 241, 0.08);
+      border-radius: 0;
+    }
+
+    .permissions-table th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+
+    .permissions-table th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .permissions-table td {
+      color: #9ca3af;
+    }
+
+    .permissions-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .permissions-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* ─── Contact Card ─── */
+    .contact-card {
+      background: linear-gradient(135deg,
+          rgba(99, 102, 241, 0.08) 0%,
+          rgba(129, 140, 248, 0.04) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .contact-card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f3f4f6;
+      margin-bottom: 16px;
+      justify-content: center;
+    }
+
+    .contact-card p {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-card a {
+      color: #818cf8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .contact-card a:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: #4b5563;
+      font-size: 0.8rem;
+    }
+
+    .footer span {
+      color: #6366f1;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 640px) {
+      .container {
+        padding: 24px 16px 60px;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 20px 18px;
+      }
+
+      .permissions-table th,
+      .permissions-table td {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+      }
+    }
+
+    /* ─── Smooth fade-in animation ─── */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section,
+    .intro,
+    .contact-card {
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    .intro {
+      animation-delay: 0.1s;
+    }
+
+    .section:nth-child(1) {
+      animation-delay: 0.15s;
+    }
+
+    .section:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .section:nth-child(3) {
+      animation-delay: 0.25s;
+    }
+
+    .section:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    .section:nth-child(5) {
+      animation-delay: 0.35s;
+    }
+
+    .section:nth-child(6) {
+      animation-delay: 0.4s;
+    }
+
+    .section:nth-child(7) {
+      animation-delay: 0.45s;
+    }
+
+    .section:nth-child(8) {
+      animation-delay: 0.5s;
+    }
+
+    .section:nth-child(9) {
+      animation-delay: 0.55s;
+    }
+
+    .section:nth-child(10) {
+      animation-delay: 0.6s;
+    }
+
+    .section:nth-child(11) {
+      animation-delay: 0.65s;
+    }
+
+    .contact-card {
+      animation-delay: 0.7s;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Ambient glow -->
+  <div class="glow-top" aria-hidden="true"></div>
+
+  <div class="container">
+    <!-- ─── Header ─── -->
+    <header class="header">
+      <!-- <div class="badge">Legal</div> -->
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Endroid Cam & Bharat Cam - Smart Camera Management App</p>
+      <p class="last-updated">Last updated: 27-02-2026</p>
+    </header>
+
+    <!-- ─── Intro ─── -->
+    <div class="intro">
+      <strong>DBS SECURITY SYSTEMS PVT. LTD.</strong> (&ldquo;we&rdquo;,
+      &ldquo;us&rdquo;, or &ldquo;our&rdquo;) operates the
+      <strong>Endroid Cam & Bharat Cam</strong> mobile application (&ldquo;App&rdquo;). This
+      Privacy Policy explains how we collect, use, store, and protect your
+      information when you use the App.<br /><br />
+      By using Endroid Cam & Bharat Cam, you agree to the collection and use of information in
+      accordance with this Privacy Policy.
+    </div>
+
+    <!-- ─── Sections ─── -->
+    <main>
+      <!-- 1. Information We Collect -->
+      <div class="section">
+        <h2><span class="num">1</span>Information We Collect</h2>
+        <p>
+          Endroid Cam & Bharat Cam collects only the minimum data required for app
+          functionality and security.
+        </p>
+
+        <h3>Personal Information</h3>
+        <ul>
+          <li>Name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <!-- <li>Profile photo (if provided)</li> -->
+        </ul>
+        <p>
+          This information is collected when you create an account or log in
+          to the App.
+        </p>
+
+        <h3>Device &amp; Camera Information</h3>
+        <ul>
+          <li>Camera device identifiers (UID) for P2P connectivity</li>
+          <li>
+            Local network information (for camera discovery on your Wi-Fi
+            network)
+          </li>
+          <li>
+            Device model and OS version (for compatibility and
+            troubleshooting)
+          </li>
+        </ul>
+
+        <!-- <h3>Non-Personal Information</h3>
+        <ul>
+          <li>App usage and crash analytics data</li>
+          <li>Log information (for security and troubleshooting)</li>
+        </ul> -->
+      </div>
+
+      <!-- 2. Permissions We Request -->
+      <div class="section">
+        <h2><span class="num">2</span>Permissions We Request</h2>
+        <p>
+          Endroid Cam & Bharat Cam requests only the permissions necessary for its core camera
+          management functionality:
+        </p>
+
+        <table class="permissions-table">
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Camera &amp; Microphone</td>
+              <td>Two-way audio communication with cameras</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>
+                Required by Android for Wi-Fi network scanning &amp; camera
+                discovery
+              </td>
+            </tr>
+            <tr>
+              <td>Bluetooth</td>
+              <td>Wi-Fi camera provisioning / setup via BLE</td>
+            </tr>
+            <tr>
+              <td>Storage</td>
+              <td>Saving camera recordings and snapshots locally</td>
+            </tr>
+            <tr>
+              <td>Notifications</td>
+              <td>Receiving push alerts from your cameras</td>
+            </tr>
+            <tr>
+              <td>Internet &amp; Network</td>
+              <td>P2P live streaming, cloud sync, and remote access</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          We do not use any of these permissions to track your location or
+          collect data beyond what is needed for app functionality.
+        </p>
+      </div>
+
+      <!-- 3. How We Use Your Information -->
+      <div class="section">
+        <h2><span class="num">3</span>How We Use Your Information</h2>
+        <ul>
+          <li>User authentication and account management</li>
+          <li>Secure peer-to-peer (P2P) connectivity to your cameras</li>
+          <li>Live video streaming and playback functionality</li>
+          <li>Camera discovery, setup, and configuration</li>
+          <li>Push notifications for camera alerts and events</li>
+          <li>App performance optimization and crash reporting</li>
+          <li>Customer support and service communication</li>
+        </ul>
+        <p>
+          We do <strong>not</strong> use your data for advertising or
+          marketing purposes.
+        </p>
+      </div>
+
+      <!-- 4. Data Sharing and Disclosure -->
+      <div class="section">
+        <h2><span class="num">4</span>Data Sharing and Disclosure</h2>
+        <p>
+          We do <strong>not</strong> sell, trade, or rent your personal
+          information to third parties.
+        </p>
+        <p>Your data may be shared only:</p>
+        <ul>
+          <li>When required by law or legal obligation</li>
+          <li>
+            To protect the security, rights, or property of users or DBS
+            SECURITY SYSTEMS PVT. LTD.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 5. Data Security -->
+      <div class="section">
+        <h2><span class="num">5</span>Data Security</h2>
+        <p>
+          We take reasonable technical and organizational measures to protect
+          your data against:
+        </p>
+        <ul>
+          <li>Unauthorized access</li>
+          <li>Loss or misuse</li>
+          <li>Alteration or disclosure</li>
+        </ul>
+        <p>
+          Camera streams use encrypted peer-to-peer connections. Account
+          credentials are securely stored on-device. However, no digital
+          system is completely secure, and we cannot guarantee absolute
+          security.
+        </p>
+      </div>
+
+      <!-- 6. Data Retention -->
+      <div class="section">
+        <h2><span class="num">6</span>Data Retention</h2>
+        <p>
+          Your personal data is retained only for as long as your account is
+          active.
+        </p>
+        <ul>
+          <li>
+            Locally stored recordings and snapshots remain on your device and
+            are under your control.
+          </li>
+          <li>
+            If you delete your account, your personal data will be permanently
+            deleted from our servers.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 7. Account Deletion -->
+      <div class="section">
+        <h2><span class="num">7</span>Account Deletion</h2>
+        <p>You can delete your Endroid Cam & Bharat Cam account at any time:</p>
+        <ul>
+          <li>From within the App (Endroid Cam & Bharat Cam app &rarr; Profile &rarr; Delete Account), or</li>
+          <li>By contacting us through the official support channel</li>
+        </ul>
+        <p>Once deleted:</p>
+        <ul>
+          <li>
+            Your account and personal data (name, email, phone number, profile photo) are
+            permanently removed
+          </li>
+          <li>
+            All associated camera configurations on our servers are deleted
+          </li>
+        </ul>
+      </div>
+
+      <!-- 8. Children's Privacy -->
+      <div class="section">
+        <h2><span class="num">8</span>Children&rsquo;s Privacy</h2>
+        <p>
+          Endroid Cam & Bharat Cam is not intended for children under the age of 13. We do not
+          knowingly collect personal information from children. If you believe
+          a child has provided us with personal data, please contact us
+          immediately.
+        </p>
+      </div>
+
+      <!-- 9. Third-Party Services -->
+      <div class="section">
+        <h2><span class="num">9</span>Third-Party Services</h2>
+        <p>
+          Endroid Cam & Bharat Cam uses the following third-party services strictly for app
+          functionality:
+        </p>
+        <ul>
+          <li>
+            <strong>Firebase Authentication</strong> &mdash; for secure user
+            sign-in
+          </li>
+          <li>
+            <strong>Firebase Cloud Messaging</strong> &mdash; for push
+            notifications
+          </li>
+          <li>
+            <strong>Firebase Crashlytics</strong> &mdash; for crash reporting
+            and stability
+          </li>
+          <!-- <li>
+            <strong>Google Sign-In</strong> &mdash; for optional social login
+          </li> -->
+        </ul>
+        <p>
+          These services operate under their own privacy policies. We do not
+          share personal data with third parties for advertising or analytics
+          beyond what is listed above.
+        </p>
+        <p>
+          Any future integrations will comply with Google Play policies and
+          applicable data protection laws.
+        </p>
+      </div>
+
+      <!-- 10. Changes to This Privacy Policy -->
+      <div class="section">
+        <h2><span class="num">10</span>Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. Changes will be
+          posted on this page, and the &ldquo;Last updated&rdquo; date will be
+          revised accordingly. Continued use of the App after changes
+          indicates acceptance of the updated policy.
+        </p>
+      </div>
+
+      <!-- 11. Contact Us -->
+      <div class="contact-card">
+        <h2>Contact Us</h2>
+        <p>
+          <strong style="color: #e5e7eb">DBS SECURITY SYSTEMS PVT. LTD.</strong>
+        </p>
+        <p>Email: <a href="mailto:naman@dbsindia.in">naman@dbsindia.in</a></p>
+      </div>
+    </main>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+      <p>
+        &copy; 2026 <span>DBS Security Systems Pvt. Ltd.</span> &mdash; All
+        rights reserved.
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>
